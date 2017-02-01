@@ -29,7 +29,6 @@ public class EtlTest {
     }
 
     @Test
-    @Ignore
     public void testTransformMoreValues() {
         Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {
             {
