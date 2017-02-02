@@ -4,13 +4,12 @@ import org.junit.Test;
 import java.util.*;
 
 import static org.junit.Assert.assertEquals;
-
-
 public class EtlTest {
     private final Etl etl = new Etl();
 
     @Test
     public void testTransformOneValue() {
+
         Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {
             {
                 put(1, Arrays.asList("A"));
@@ -52,7 +51,6 @@ public class EtlTest {
     }
 
     @Test
-    @Ignore
     public void testMoreKeys() {
         Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {
             {
@@ -76,7 +74,6 @@ public class EtlTest {
     }
 
     @Test
-    @Ignore
     public void testFullDataset() {
         Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {
             {

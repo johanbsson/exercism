@@ -5,32 +5,23 @@ import java.util.*;
  */
 public class EtlRunner {
     public static void main(String[] args) {
-        System.out.println("Hello");
 
         Etl etl = new Etl();
-
-
-        Map<Integer, List<String>> old = new HashMap<Integer, List<String>>() {
-            {
-                put(1, Arrays.asList("A", "E", "I", "O", "U"));
-            }
-        };
-        old = Collections.unmodifiableMap(old);
-
-
-
         Map<String, Integer> output;
-        output= etl.transform(old);
-        System.out.println(output);
 
 
-        //Expected output
+
+        //Transorm old
+        //output= etl.transform(old);
+        //Print result
+        //System.out.println(output);
+
+        //Transform old
+        //Iterate over map
+
         Map<String, Integer> expected;
-        expected = new HashMap<String, Integer>() {
-            {
-                put("a", 1);
-            }
-        };
+        expected = new HashMap<String, Integer>();
+        expected.put("a", 1);
         expected = Collections.unmodifiableMap(expected);
     }
 }
