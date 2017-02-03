@@ -22,6 +22,7 @@ public class WordCountTest {
     }
 
 
+    @Ignore
     @Test
     public void countOneWord() {
         expectedWordCount.put("word", 1);
@@ -32,7 +33,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore
     @Test
     public void countOneOfEach() {
         expectedWordCount.put("one", 1);
