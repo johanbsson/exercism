@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 public class NucleotideTest {
 
+    @Ignore
     @Test
     public void testEmptyDnaStringHasNoAdenosine() {
         DNA dna = new DNA("");
