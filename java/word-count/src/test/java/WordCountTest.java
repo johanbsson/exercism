@@ -22,7 +22,6 @@ public class WordCountTest {
     }
 
 
-    @Ignore
     @Test
     public void countOneWord() {
         expectedWordCount.put("word", 1);
@@ -45,7 +44,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore
     @Test
     public void countMultipleOccurences() {
         expectedWordCount.put("one", 1);
@@ -60,7 +58,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore
     @Test
     public void ignorePunctuation() {
         expectedWordCount.put("car", 1);
@@ -76,7 +73,6 @@ public class WordCountTest {
 
     }
 
-    @Ignore
     @Test
     public void includeNumbers() {
         expectedWordCount.put("testing", 2);
@@ -89,7 +85,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore
     @Test
     public void normalizeCase() {
         expectedWordCount.put("go", 3);
