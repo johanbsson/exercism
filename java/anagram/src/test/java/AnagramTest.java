@@ -9,7 +9,6 @@ import static org.junit.Assert.*;
 
 public class AnagramTest {
 
-
     @Test
     public void testNoMatches() {
         Anagram detector = new Anagram("diaper");
@@ -38,7 +37,6 @@ public class AnagramTest {
         assertTrue(anagrams.isEmpty());
     }
 
-    @Ignore
     @Test
     public void testIdenticalWordIsNotAnagram() {
         Anagram detector = new Anagram("corn");
@@ -47,21 +45,18 @@ public class AnagramTest {
         assertThat(anagrams.size(), is(1));
     }
 
-    @Ignore
     @Test
     public void testEliminateAnagramsWithSameChecksum() {
         Anagram detector = new Anagram("mass");
         assertTrue(detector.match(Arrays.asList("last")).isEmpty());
     }
 
-    @Ignore
     @Test
     public void testEliminateAnagramSubsets() {
         Anagram detector = new Anagram("good");
         assertTrue(detector.match(Arrays.asList("dog", "goody")).isEmpty());
     }
 
-    @Ignore
     @Test
     public void testDetectAnagrams() {
         Anagram detector = new Anagram("listen");
@@ -69,7 +64,6 @@ public class AnagramTest {
         assertThat(anagrams, hasItem("inlets"));
     }
 
-    @Ignore
     @Test
     public void testMultipleAnagrams() {
         Anagram detector = new Anagram("allergy");
@@ -77,7 +71,6 @@ public class AnagramTest {
         assertThat(anagrams, allOf(hasItem("gallery"), hasItem("largely"), hasItem("regally")));
     }
 
-    @Ignore
     @Test
     public void testAnagramsAreCaseInsensitive() {
         Anagram detector = new Anagram("Orchestra");
