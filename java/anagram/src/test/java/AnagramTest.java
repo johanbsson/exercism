@@ -72,7 +72,6 @@ public class AnagramTest {
     }
 
     @Test
-    @Ignore
     public void testAnagramsAreCaseInsensitive() {
         Anagram detector = new Anagram("Orchestra");
         List<String> anagrams = detector.match(Arrays.asList("cashregister", "Carthorse", "radishes"));
