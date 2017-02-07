@@ -1,39 +1,39 @@
 import java.util.*;
 public class Anagram {
+    /** This is the base for anagrams */
     private String anagramWord;
 
-    public Anagram(String word) {
-        this.anagramWord = word;
+    public Anagram(String anagram) {
+        this.anagramWord = anagram;
     }
 
-    List<String> match(List<String> words) {
-        List<String> anagramList = new ArrayList<>();
+    List<String> match(List<String> listOfAnacramCandidates) {
+        List<String> listWithAnagrams = new ArrayList<>();
         //Will use this to only get unique words
-        HashSet<String> hs = new HashSet<>();
+        HashSet<String> hashSetForUniqueWords = new HashSet<>();
 
-        for(String w:words){
-            //todo refactor logical expression
-            //todo folow up uses of lowerCase, maybe uneeded uses somewhere
+        for(String w:listOfAnacramCandidates){
             boolean sameAsAnagramWord = w.toLowerCase().equals(anagramWord.toLowerCase());
-            System.out.println("Word is " + w);
            if(isAnagram(w.toLowerCase()) && !sameAsAnagramWord) {
-               System.out.println("And it was added to hashset");
-               hs.add(w);
+               hashSetForUniqueWords.add(w);
            }
         }
-        for(String s: hs){
-            anagramList.add(s);
+        for(String s: hashSetForUniqueWords){
+            listWithAnagrams.add(s);
         }
-        return anagramList;
+        return listWithAnagrams;
     }
     //Try two
+    private boolean sameWordsIgnoreCase(String w1, String w2){
+        boolean ret = w1.toLowerCase().equals(w2.toLowerCase());
+        System.out.println("Words " + w1 + " and " + w2 + " Same? " + ret);
+        return ret;
+
+    }
     private boolean isAnagram(String word){
         boolean isAnagram = false;
-        System.out.println("In isAnagram word is " + word);
         String baseWordAsSortedString = convertWordToSortedList(anagramWord).toLowerCase();
-        System.out.println("BaseWordAsSortedString is: " +baseWordAsSortedString);
         String wordAsSortedString = convertWordToSortedList(word).toLowerCase();
-        System.out.println("WordAsSortedStringIs: " + wordAsSortedString);
         if(baseWordAsSortedString.equals(wordAsSortedString)){
             isAnagram = true;
         }
@@ -49,42 +49,9 @@ public class Anagram {
         for(char c:cArray){
             templist.add(c);
         }
-
         java.util.Collections.sort(templist);
         return templist.toString().toLowerCase();
 
     }
-   /*
-    //Try one
-    private boolean isAnagramold(String word){
-       boolean isAnagram = false;
-       List<Character> baseWordAsSortedList = convertWordToSortedList(anagramWord);
-        List<Character> wordAsSortedList = convertWordToSortedList(word);
-
-
-        boolean isSameSize = wordAsSortedList.size() == baseWordAsSortedList.size();
-
-        boolean containsSameLetters = wordAsSortedList.containsAll(baseWordAsSortedList)
-                && baseWordAsSortedList.containsAll(baseWordAsSortedList);
-        //wordAsSortedList.
-        if( isSameSize && containsSameLetters) {
-            System.out.println("Word " + word + " was anagram");
-            isAnagram = true;
-        }
-        return isAnagram;
-    }
-    //try one
-
-    List<Character> convertWordToSortedListold(String input){
-        char[] cArray = input.toCharArray();
-        ArrayList<Character> templist = new ArrayList<>();
-        for(char c:cArray){
-            templist.add(c);
-        }
-        java.util.Collections.sort(templist);
-        System.out.println(templist);
-        return templist;
-    }
-    */
 
 }
