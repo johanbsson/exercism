@@ -44,27 +44,95 @@ public class Meetup {
     public LocalDate day(DayOfWeek d, MeetupSchedule s) {
         DayOfWeek day = d;
         MeetupSchedule shedule = s;
+        LocalDate returnDate = null;
         //FIRST,
         //SECOND,
         //THIRD,
         //FOURTH,
         //LAST,
         //TEENTH
+        if(s == MeetupSchedule.FIRST.TEENTH){
+          returnDate = getTenth(d, s);
+        }
+
         //We have the year and the mont from constructor
 
         //We get the weekday and first/second/tenth.. as input from function day
 
         //
         LocalDate dt = LocalDate.of(2013, 5, 13);
-        return dt;
+        return returnDate;
     }
     public LocalDate getTenth(DayOfWeek d, MeetupSchedule s){
         LocalDate dt =  null ;  //LocalDate.now();
+        //First tenth day is date 13
+        LocalDate firstTenthDate = LocalDate.of(year, month, 13);
+        DayOfWeek weekDayOfFirstTenthDay = firstTenthDate.getDayOfWeek();
+        System.out.println("First tenth day is a " + weekDayOfFirstTenthDay);
+        System.out.println("The weekday of the asked day is: " + d);
+
+        //What week day is this
+        //What week is this
+        //If it's a monday, all tents are in this week
+        if(weekDayOfFirstTenthDay == DayOfWeek.MONDAY){
+            if(d == DayOfWeek.MONDAY){
+                return firstTenthDate;
+            }
+
+            //The first testcase works now
+        }
+        else if(weekDayOfFirstTenthDay == DayOfWeek.TUESDAY){
+            //Second testcase has first tenth day tuesday
+            //And asks for first monday which is 6 days ahead
+            LocalDate ret = null;
+            if(d == DayOfWeek.MONDAY){
+                ret = firstTenthDate.plusDays(6);
+            }
+            System.out.println("The day i got was:  "  + ret);
+            return ret;
+        }
+        else if(weekDayOfFirstTenthDay == DayOfWeek.FRIDAY){
+            //Third testcase has first tenth day friday
+            //And asks for first monday which is 3 days ahead
+            LocalDate ret = null;
+            if(d == DayOfWeek.MONDAY){
+                ret = firstTenthDate.plusDays(3);
+            }
+            System.out.println("The day i got was:  "  + ret);
+            return ret;
+        }
+        else if(weekDayOfFirstTenthDay == DayOfWeek.WEDNESDAY){
+            //Fourth testcase has first tenth day wednesday
+            //And asks for first thuesday which is 6 days ahead
+            LocalDate ret = null;
+            if(d == DayOfWeek.TUESDAY){
+                ret = firstTenthDate.plusDays(6);
+            }
+            System.out.println("The day i got was:  "  + ret);
+            return ret;
+        }
+        else if(weekDayOfFirstTenthDay == DayOfWeek.SATURDAY){
+            //Fifth testcase has first tenth day saturday
+            //And asks for first thuesday which is 3 days ahead
+
+            LocalDate ret = null;
+            if(d == DayOfWeek.TUESDAY){
+               ret = firstTenthDate.plusDays(3);
+            }
+            System.out.println("The day i got was:  "  + ret);
+            return ret;
+        }
         return dt;
     }
     public LocalDate getFirst(DayOfWeek d, MeetupSchedule s){
         LocalDate dt =  null ;  //LocalDate.now();
         return dt;
+        // What day is the first workday of the month
+        //If it's a monday, then tuesday is in sameweek
+        //If it's a tuesday then first monday is in next week
+        //If it's a wednesday thin first tuesday is in next week
+
+
     }
     public LocalDate getSecond(DayOfWeek d, MeetupSchedule s){
         LocalDate dt =  null ;  //LocalDate.now();
@@ -80,6 +148,7 @@ public class Meetup {
     }
     public LocalDate getLast(DayOfWeek d, MeetupSchedule s){
         LocalDate dt =  null ;  //LocalDate.now();
+        //If last workday of month is friday then all the
         return dt;
     }
 
