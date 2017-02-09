@@ -1,5 +1,8 @@
 /**
  * Created by johan on 2017-02-08.
+ * This is uggly but it works
+ * fixme a number 1,2,3 as input should genereta isSomething is true,
+ * but it doesn't
  */
 public class Bob {
     public String hey(String s) {
@@ -27,19 +30,20 @@ public class Bob {
     boolean isShout(String s){
         boolean ret = false;
         //ret = s.endsWith("!") && isUpperCase2(s);
-        ret = isUpperCase2(s);
+        ret = isUpperCase2(s) && hasLetters(s);
         return ret;
     }
     boolean isSomething(String s){
         boolean ret = false;
-        ret = !isQuestion(s) && ! isShout(s) && isNoting(s);
+        ret = !isQuestion(s) && ! isShout(s) && !isNoting(s);
         return ret;
     }
     boolean isNoting(String s){
         boolean ret = false;
-        ret = s.lastIndexOf(s) == 0;
+        ret = s.trim().length() == 0;
         return ret;
     }
+
     boolean hasCapital(String test1){
         //test1 = "Hello"// your string;
         String test2 = test1.toLowerCase();
@@ -57,6 +61,17 @@ public class Bob {
           }
           return true;
       }
+    public boolean hasLetters(String s)
+    {
+        for (int i=0; i<s.length(); i++)
+        {
+            if (Character.isAlphabetic(s.charAt(i)))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 class BobSpeak {
     public static String toQuestion = "Sure.";
