@@ -55,6 +55,8 @@ public class Meetup {
         System.out.println("First tenth day is a " + weekDayOfFirstTenthDay);
         System.out.println("The weekday of the asked day is: " + d);
 
+        MagicGizmo mg;
+        mg = new MagicGizmo();
         if(weekDayOfFirstTenthDay == DayOfWeek.MONDAY){
             if(d == DayOfWeek.MONDAY){
                 ret = firstTenthDate;
