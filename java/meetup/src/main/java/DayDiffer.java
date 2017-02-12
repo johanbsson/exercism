@@ -3,7 +3,7 @@ import java.time.DayOfWeek;
 /**
  * Created by johan on 2017-02-12.
  */
-public class GizmoRunner {
+public class DayDiffer {
     public static void main(String[] args) {
         MagicGizmo g = new MagicGizmo();
 
