@@ -56,7 +56,6 @@ public class Meetup {
 
         MagicGizmo mg;
         mg = new MagicGizmo();
-        LocalDate dt = mg.doSomeMagic(firstTenthDate, weekDayOfFirstTenthDay);
         int countToDay = mg.countFromDayToDayForward(weekDayOfFirstTenthDay, d);
         if(weekDayOfFirstTenthDay == DayOfWeek.MONDAY){
             if(d == DayOfWeek.MONDAY){

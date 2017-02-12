@@ -31,10 +31,12 @@ public class MagicGizmo {
 
     }
     private List<DayOfWeek> l;
+    /*
     public LocalDate doSomeMagic(LocalDate firstTenthDate, DayOfWeek weekDayOfFirstTenthDay) {
         LocalDate theDate = null;
         return theDate;
     }
+    */
 
     public int countFromDayToDayForward(DayOfWeek weekDayOfFirstDay, DayOfWeek toDay) {
 
