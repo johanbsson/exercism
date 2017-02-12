@@ -42,6 +42,8 @@ public class Meetup {
         DayOfWeek day = d;
         MeetupSchedule shedule = s;
         LocalDate returnDate = null;
+        DateFinder df = new DateFinder(year,month);
+       //todo continue here to implment DateFinder
         if(s == MeetupSchedule.TEENTH){
           returnDate = getTenth(d, s);
         }
