@@ -31,7 +31,9 @@ public class DayDiffer {
     private List<DayOfWeek> dayList;
 
     public int countFromDayToDayForward(DayOfWeek weekDayOfFirstDay, DayOfWeek toDay) {
-        int dayDiffForward = dayList.indexOf(toDay) - dayList.indexOf(weekDayOfFirstDay);
+        int indexOfFirstDay = dayList.indexOf(weekDayOfFirstDay);
+        List<DayOfWeek> sublistForWeek = dayList.subList(indexOfFirstDay, indexOfFirstDay + 7);
+        int dayDiffForward = sublistForWeek.indexOf(toDay);
         return dayDiffForward;
     }
 }

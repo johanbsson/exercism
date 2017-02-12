@@ -28,7 +28,7 @@ public class DayDifferTest {
     @Test
     public void  test_sunday_and_forward(){
         DayDiffer mg = new DayDiffer();
-        assertEquals(0, mg.countFromDayToDayForward(DayOfWeek.SUNDAY, DayOfWeek.TUESDAY));
+        assertEquals(0, mg.countFromDayToDayForward(DayOfWeek.SUNDAY, DayOfWeek.SUNDAY));
         assertEquals(1, mg.countFromDayToDayForward(DayOfWeek.SUNDAY, DayOfWeek.MONDAY));
         assertEquals(6, mg.countFromDayToDayForward(DayOfWeek.SUNDAY, DayOfWeek.SATURDAY));
 
