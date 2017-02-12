@@ -1,4 +1,3 @@
-import java.lang.reflect.Method;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.TemporalField;
@@ -58,6 +57,7 @@ public class Meetup {
         MagicGizmo mg;
         mg = new MagicGizmo();
         LocalDate dt = mg.doSomeMagic(firstTenthDate, weekDayOfFirstTenthDay);
+        int countToDay = mg.countFromDayToDayForward(weekDayOfFirstTenthDay, d);
         if(weekDayOfFirstTenthDay == DayOfWeek.MONDAY){
             if(d == DayOfWeek.MONDAY){
                 ret = firstTenthDate;
