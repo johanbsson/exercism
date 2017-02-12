@@ -57,6 +57,12 @@ public class Meetup {
         DayDiffer mg;
         mg = new DayDiffer();
         int countToDay = mg.countFromDayToDayForward(weekDayOfFirstTenthDay, d);
+        return  firstTenthDate.plusDays(countToDay);
+
+
+       /*
+
+
         if(weekDayOfFirstTenthDay == DayOfWeek.MONDAY){
             if(d == DayOfWeek.MONDAY){
                 ret = firstTenthDate;
@@ -167,6 +173,9 @@ public class Meetup {
             System.out.println("The day i got was:  "  + ret);
         }
         return ret;
+
+
+        */
     }
     public LocalDate getFirst(DayOfWeek d, MeetupSchedule s){
         LocalDate dt =  null ;  //LocalDate.now();
