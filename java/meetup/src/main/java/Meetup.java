@@ -11,18 +11,10 @@ public class Meetup {
 
     int month;
     int year;
-    DayOfWeek dayOfWeekFirstWeek;
-    DayOfWeek dayOfWeekLastWeek;
-    LocalDate firstDateOfMonth;
-    LocalDate lastDateOfMonth;
 
     public Meetup(int month, int year) {
         this.month = month;
         this.year = year;
-        firstDateOfMonth =  LocalDate.of(year, month, 1);
-        lastDateOfMonth = firstDateOfMonth.with(lastDayOfMonth());
-        dayOfWeekFirstWeek = firstDateOfMonth.getDayOfWeek();
-        dayOfWeekLastWeek = lastDateOfMonth.getDayOfWeek();
 
     }
     public LocalDate day(DayOfWeek d, MeetupSchedule s) {
