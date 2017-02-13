@@ -17,17 +17,24 @@ public class Meetup {
         this.year = year;
 
     }
-    public LocalDate day(DayOfWeek d, MeetupSchedule s) {
-        DayOfWeek day = d;
-        MeetupSchedule shedule = s;
+    public LocalDate day(DayOfWeek dayOfWeek, MeetupSchedule meetupSchedule) {
+        DayOfWeek day = dayOfWeek;
+        MeetupSchedule shedule = meetupSchedule;
+
         DateFinder df = new DateFinder(year  ,month);
-        LocalDate firstDataInPeriod = LocalDate.of(year, month, 13);
-        //LocalDate firstDataInPeriod = df.getFirstDateInPeriod()
-        DayOfWeek weekDayOfFirstTenthDay = firstDataInPeriod.getDayOfWeek();
-        DayDiffer mg;
-        mg = new DayDiffer();
-        int countToDay = mg.countFromDayToDayForward(weekDayOfFirstTenthDay, d);
-        return  firstDataInPeriod.plusDays(countToDay);
+        //Find the first day in period, the date and the weekday
+        LocalDate firstDateInPeriod = df.getFirstDateInPeriod(meetupSchedule);
+        //Find out what the weekday is for this date
+        DayOfWeek weekDayOfFirstDay = firstDateInPeriod.getDayOfWeek();
+
+        //Find out how many days it is to the wanted day
+        DayDiffer dd;
+        dd = new DayDiffer();
+        int countToDay = dd.countFromDayToDayForward(weekDayOfFirstDay, dayOfWeek);
+
+        //Add countToDay to firsDateInPeriod
+        LocalDate theDateWeAreLookingFor  = firstDateInPeriod.plusDays(countToDay);
+        return theDateWeAreLookingFor;
     }
 }
 

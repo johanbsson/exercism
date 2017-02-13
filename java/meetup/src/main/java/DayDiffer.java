@@ -30,10 +30,10 @@ public class DayDiffer {
     }
     private List<DayOfWeek> dayList;
 
-    public int countFromDayToDayForward(DayOfWeek weekDayOfFirstDay, DayOfWeek toDay) {
-        int indexOfFirstDay = dayList.indexOf(weekDayOfFirstDay);
+    public int countFromDayToDayForward(DayOfWeek firstDayInPeriod, DayOfWeek targetDay) {
+        int indexOfFirstDay = dayList.indexOf(firstDayInPeriod);
         List<DayOfWeek> sublistForWeek = dayList.subList(indexOfFirstDay, indexOfFirstDay + 7);
-        int dayDiffForward = sublistForWeek.indexOf(toDay);
+        int dayDiffForward = sublistForWeek.indexOf(targetDay);
         return dayDiffForward;
     }
 }
