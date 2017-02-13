@@ -558,7 +558,6 @@ public class MeetupTest {
         assertEquals(expected, meetup.day(DayOfWeek.SUNDAY, MeetupSchedule.FOURTH));
     }
 
-    @Ignore
     @Test
     public void test_last_monday_of_march_2013() {
         LocalDate expected = LocalDate.of(2013, 3, 25);
@@ -566,7 +565,6 @@ public class MeetupTest {
         assertEquals(expected, meetup.day(DayOfWeek.MONDAY, MeetupSchedule.LAST));
     }
 
-    @Ignore
     @Test
     public void test_last_monday_of_april_2013() {
         LocalDate expected = LocalDate.of(2013, 4, 29);
@@ -574,7 +572,6 @@ public class MeetupTest {
         assertEquals(expected, meetup.day(DayOfWeek.MONDAY, MeetupSchedule.LAST));
     }
 
-    @Ignore
     @Test
     public void test_last_tuesday_of_may_2013() {
         LocalDate expected = LocalDate.of(2013, 5, 28);
@@ -582,7 +579,6 @@ public class MeetupTest {
         assertEquals(expected, meetup.day(DayOfWeek.TUESDAY, MeetupSchedule.LAST));
     }
 
-    @Ignore
     @Test
     public void test_last_tuesday_of_june_2013() {
         LocalDate expected = LocalDate.of(2013, 6, 25);
@@ -590,7 +586,6 @@ public class MeetupTest {
         assertEquals(expected, meetup.day(DayOfWeek.TUESDAY, MeetupSchedule.LAST));
     }
 
-    @Ignore
     @Test
     public void test_last_wednesday_of_july_2013() {
         LocalDate expected = LocalDate.of(2013, 7, 31);
@@ -598,7 +593,6 @@ public class MeetupTest {
         assertEquals(expected, meetup.day(DayOfWeek.WEDNESDAY, MeetupSchedule.LAST));
     }
 
-    @Ignore
     @Test
     public void test_last_wednesday_of_august_2013() {
         LocalDate expected = LocalDate.of(2013, 8, 28);
@@ -606,7 +600,6 @@ public class MeetupTest {
         assertEquals(expected, meetup.day(DayOfWeek.WEDNESDAY, MeetupSchedule.LAST));
     }
 
-    @Ignore
     @Test
     public void test_last_thursday_of_september_2013() {
         LocalDate expected = LocalDate.of(2013, 9, 26);
@@ -614,7 +607,6 @@ public class MeetupTest {
         assertEquals(expected, meetup.day(DayOfWeek.THURSDAY, MeetupSchedule.LAST));
     }
 
-    @Ignore
     @Test
     public void test_last_thursday_of_october_2013() {
         LocalDate expected = LocalDate.of(2013, 10, 31);
@@ -622,7 +614,6 @@ public class MeetupTest {
         assertEquals(expected, meetup.day(DayOfWeek.THURSDAY, MeetupSchedule.LAST));
     }
 
-    @Ignore
     @Test
     public void test_last_friday_of_november_2013() {
         LocalDate expected = LocalDate.of(2013, 11, 29);
@@ -630,7 +621,6 @@ public class MeetupTest {
         assertEquals(expected, meetup.day(DayOfWeek.FRIDAY, MeetupSchedule.LAST));
     }
 
-    @Ignore
     @Test
     public void test_last_friday_of_december_2013() {
         LocalDate expected = LocalDate.of(2013, 12, 27);
@@ -638,7 +628,6 @@ public class MeetupTest {
         assertEquals(expected, meetup.day(DayOfWeek.FRIDAY, MeetupSchedule.LAST));
     }
 
-    @Ignore
     @Test
     public void test_last_saturday_of_january_2013() {
         LocalDate expected = LocalDate.of(2013, 1, 26);
@@ -646,7 +635,6 @@ public class MeetupTest {
         assertEquals(expected, meetup.day(DayOfWeek.SATURDAY, MeetupSchedule.LAST));
     }
 
-    @Ignore
     @Test
     public void test_last_saturday_of_february_2013() {
         LocalDate expected = LocalDate.of(2013, 2, 23);
@@ -654,7 +642,6 @@ public class MeetupTest {
         assertEquals(expected, meetup.day(DayOfWeek.SATURDAY, MeetupSchedule.LAST));
     }
 
-    @Ignore
     @Test
     public void test_last_sunday_of_march_2013() {
         LocalDate expected = LocalDate.of(2013, 3, 31);
@@ -662,7 +649,6 @@ public class MeetupTest {
         assertEquals(expected, meetup.day(DayOfWeek.SUNDAY, MeetupSchedule.LAST));
     }
 
-    @Ignore
     @Test
     public void test_last_sunday_of_april_2013() {
         LocalDate expected = LocalDate.of(2013, 4, 28);

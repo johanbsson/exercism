@@ -42,4 +42,8 @@ public class DateFinder {
 
         return firstDataInPeriod;
     }
+
+    public LocalDate getLastDateInMonth() {
+        return lastDateOfMonth;
+    }
 }
