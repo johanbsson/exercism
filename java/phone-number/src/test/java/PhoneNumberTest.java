@@ -25,29 +25,24 @@ public class PhoneNumberTest {
         );
     }
 
-    @Ignore
     @Test
     public void cleansNumberWithDots() {
         final String expectedNumber = "1234567890";
         final String actualNumber = new PhoneNumber("123.456.7890").getNumber();
-
         assertEquals(
                 expectedNumber, actualNumber
         );
     }
 
-    @Ignore
     @Test
     public void cleansNumberWithMultipleSpaces() {
         final String expectedNumber = "1234567890";
         final String actualNumber = new PhoneNumber("123 456   7890   ").getNumber();
-
         assertEquals(
                 expectedNumber, actualNumber
         );
     }
 
-    @Ignore
     @Test
     public void invalidWhen9Digits() {
         expectedException.expect(IllegalArgumentException.class);
@@ -55,7 +50,6 @@ public class PhoneNumberTest {
         new PhoneNumber("123456789");
     }
 
-    @Ignore
     @Test
     public void invalidWhen11Digits() {
         expectedException.expect(IllegalArgumentException.class);
