@@ -28,15 +28,19 @@ public class PhoneNumber {
         System.out.println("elevenLongStartsWith1 is: " + elevenLongStartsWith1);
         boolean tenLong = cleanNumber.length() == 10;
         System.out.println("tenLong is: " + tenLong);
-        boolean validLength = tenLong && elevenLongStartsWith1;
+        boolean validLength = tenLong || elevenLongStartsWith1;
         System.out.println("validlenth -  tenLong || elevenLongStartsWith1 is: " + validLength);
         if(validLength){
             System.out.println("Does not throw exception");
         }
-        else {
+        else if (cleanNumber.length() == 11){
             System.out.println("Throws exception");
+            throw new IllegalArgumentException(numberIs11DigitsButDoesNotStartWith1ExceptionMessage);
+        }
+        else {
             throw new IllegalArgumentException(wrongLengthExceptionMessage);
         }
+
     }
 
     private String cleanNumber(String s) {
