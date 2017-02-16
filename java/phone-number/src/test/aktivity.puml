@@ -1,0 +1,35 @@
+@startuml
+start
+partition Input {
+:read intput;
+}
+partition parseAndClean{
+while (contains char)
+if (is valid chars)
+    if (isdigit) (yes)
+        :add to clean;
+    endif
+
+else (no)
+:thow invalid argument;
+stop
+endif
+endwhile (no)
+}
+partition validateLenth {
+if (length = 10 or 11 ) then ()
+  :Text 1;
+elseif (len 11 and starts with 1) then (yes)
+  :Text 2;
+  stop
+elseif (condition C) then (yes)
+  :Text 3;
+elseif (condition D) then (yes)
+  :Text 4;
+else (nothing)
+  :Text else;
+endif
+}
+stop
+
+@enduml
