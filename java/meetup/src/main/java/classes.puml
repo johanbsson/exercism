@@ -1,0 +1,23 @@
+@startuml
+
+
+enum MeetupSchedule {
+ FIRST
+ SECOND
+ THIRD
+ FOURTH
+ LAST
+ TEENTH
+}
+
+class Meetup {
+dd: DayDiffer
+df: DayFinder
+}
+class DayDiffer
+class DayFinder
+Meetup --> DayDiffer
+Meetup --> DayFinder
+
+
+@enduml
