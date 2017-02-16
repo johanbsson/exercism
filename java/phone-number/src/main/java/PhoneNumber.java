@@ -20,21 +20,13 @@ public class PhoneNumber {
     }
 
     private void validateNumber(String cleanNumber) {
-        System.out.println("Number is: " + cleanNumber);
-        System.out.println("Length of number " + cleanNumber.length());
-        System.out.println("Starts whith: " + cleanNumber.charAt(0));
-        System.out.println("If is: " + (cleanNumber.length() == 11 && cleanNumber.charAt(0) == '1' ));
         boolean elevenLongStartsWith1 = cleanNumber.length() == 11 && cleanNumber.charAt(0) == '1' ;
-        System.out.println("elevenLongStartsWith1 is: " + elevenLongStartsWith1);
         boolean tenLong = cleanNumber.length() == 10;
-        System.out.println("tenLong is: " + tenLong);
         boolean validLength = tenLong || elevenLongStartsWith1;
-        System.out.println("validlenth -  tenLong || elevenLongStartsWith1 is: " + validLength);
         if(validLength){
             System.out.println("Does not throw exception");
         }
         else if (cleanNumber.length() == 11){
-            System.out.println("Throws exception");
             throw new IllegalArgumentException(numberIs11DigitsButDoesNotStartWith1ExceptionMessage);
         }
         else {
