@@ -57,7 +57,6 @@ public class PhoneNumberTest {
         new PhoneNumber("21234567890");
     }
 
-    @Ignore
     @Test
     public void validWhen11DigitsAndFirstIs1() {
         final String expectedNumber = "1234567890";
@@ -68,7 +67,6 @@ public class PhoneNumberTest {
         );
     }
 
-    @Ignore
     @Test
     public void invalidWhen12Digits() {
         expectedException.expect(IllegalArgumentException.class);
@@ -76,7 +74,6 @@ public class PhoneNumberTest {
         new PhoneNumber("321234567890");
     }
 
-    @Ignore
     @Test
     public void invalidWithLetters() {
         expectedException.expect(IllegalArgumentException.class);
@@ -84,7 +81,6 @@ public class PhoneNumberTest {
         new PhoneNumber("123-abc-7890");
     }
 
-    @Ignore
     @Test
     public void invalidWithPunctuation() {
         expectedException.expect(IllegalArgumentException.class);
@@ -92,7 +88,6 @@ public class PhoneNumberTest {
         new PhoneNumber("123-@:!-7890");
     }
 
-    @Ignore
     @Test
     public void invalidWithRightNumberOfDigitsButLettersMixedIn() {
         expectedException.expect(IllegalArgumentException.class);

@@ -1,7 +1,15 @@
+import com.sun.tools.javac.util.List;
+import javafx.scene.control.ListCell;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created by johan on 2017-02-13.
  */
 public class PhoneNumber {
+    String validNumber;
     String dirtyNumber;
     String cleanNumber;
     private final static String wrongLengthExceptionMessage = "Number must be 10 or 11 digits";
@@ -12,40 +20,75 @@ public class PhoneNumber {
     public PhoneNumber(String s) {
        this.dirtyNumber = s;
         cleanNumber = cleanNumber(this.dirtyNumber);
-        validateNumber(cleanNumber);
+        validNumber = validateNumber(this.cleanNumber);
     }
 
     public String getNumber() {
-       return  cleanNumber;
+       return  validNumber;
     }
 
-    private void validateNumber(String cleanNumber) {
-        boolean elevenLongStartsWith1 = cleanNumber.length() == 11 && cleanNumber.charAt(0) == '1' ;
+    private String validateNumber(String cleanNumber) {
+        boolean elevenLong = cleanNumber.length() == 11;
         boolean tenLong = cleanNumber.length() == 10;
-        boolean validLength = tenLong || elevenLongStartsWith1;
-        if(validLength){
-            System.out.println("Does not throw exception");
+        boolean startsWith1 = cleanNumber.charAt(0) == '1';
+        String vnr = null;
+        if(tenLong){
+            vnr = cleanNumber;
         }
-        else if (cleanNumber.length() == 11){
-            throw new IllegalArgumentException(numberIs11DigitsButDoesNotStartWith1ExceptionMessage);
+        else if(elevenLong){
+            if(startsWith1){
+                //remove first
+                vnr =  cleanNumber.substring(1);
+            }
+            else {
+                //throw exception
+                throw new IllegalArgumentException(numberIs11DigitsButDoesNotStartWith1ExceptionMessage);
+            }
         }
         else {
             throw new IllegalArgumentException(wrongLengthExceptionMessage);
         }
-
+        return vnr;
     }
 
     private String cleanNumber(String s) {
        StringBuilder sb = new StringBuilder();
        for( Character c :s.toCharArray()){
-         if(Character.isDigit(c)){
-            sb.append(c);
-         }
+           System.out.println("char is>"+ c + "<");
+
+           if(isValidChar(c) || Character.isDigit(c)) {
+               if(Character.isDigit(c)){
+                   sb.append(c);
+               }
+           }
+           else {
+               //throw invalid character
+               throw new IllegalArgumentException(illegalCharacterExceptionMessage);
+           }
        }
        return sb.toString();
-    };
+    }
     private boolean isValidChar(char c){
-        return true;
+
+        Character[] vc;
+        vc = new Character[]{
+                ' ',
+                '(',
+                ')',
+                '.',
+                '-',
+                '\''
+        };
+        System.out.println("Valid chars :" + vc + ":");
+        //ArrayList<Character> cl = new ArrayList<Character>(validChars);
+        ArrayList<Character> cl = new ArrayList<>();
+        for (Character x : vc){
+            cl.add(x);
+        }
+        boolean contains = cl.contains(c);
+        boolean isDigit = Character.isDigit(c);
+        boolean ret = contains || isDigit;
+        return ret;
     }
 }
 /*
