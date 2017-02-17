@@ -1,0 +1,14 @@
+@startuml
+
+class School {
+
+    numberOfStudents() : int
+    add(): void
+    grade(int i): Collection<String>
+    studentsByGradeAlphabetical(): Map<<String, int>>
+}
+
+class Map
+School .> Map
+
+@enduml
