@@ -28,7 +28,6 @@ public class SchoolTest {
     assertThat(school.grade(2), hasItem("Aimee"));
   }
 
-  @Ignore
   @Test
   public void addsMoreStudentsInSameGrade() {
     final int grade = 2;
@@ -40,7 +39,6 @@ public class SchoolTest {
     assertThat(school.grade(grade), allOf(hasItem("James"), hasItem("Blair"), hasItem("Paul")));
   }
 
-  @Ignore
   @Test
   public void addsStudentsInMultipleGrades() {
     school.add("Chelsea", 3);
@@ -53,13 +51,11 @@ public class SchoolTest {
     assertThat(school.grade(7), hasItem("Logan"));
   }
 
-  @Ignore
   @Test
   public void getsStudentsInEmptyGrade() {
     assertTrue(school.grade(1).isEmpty());
   }
 
-  @Ignore
   @Test
   public void sortsSchool() {
     school.add("Kyle", 4);
@@ -84,7 +80,6 @@ public class SchoolTest {
     }
   }
 
-  @Ignore
   @Test
   public void modifyingFetchedGradeShouldNotModifyInternalDatabase() {
     String shouldNotBeAdded = "Should not be added to school";
@@ -103,9 +98,6 @@ public class SchoolTest {
   }
 
 
- //todo remove comments around this tests later, it didnt compile at first
-  /*
-  @Ignore
   @Test
   public void modifyingSortedStudentsShouldNotModifyInternalDatabase() {
     int grade = 2;
@@ -125,5 +117,4 @@ public class SchoolTest {
     assertThat(school.studentsByGradeAlphabetical().get(grade), 
       not(hasItem(studentWhichShouldNotBeAdded)));
   }
-  */
 }
