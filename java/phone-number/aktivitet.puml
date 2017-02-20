@@ -1,5 +1,7 @@
 @startuml
 start
+:foo;
+:bar;
 :input into nrString/
 'clean and validate content
 partition clean {
