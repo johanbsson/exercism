@@ -3,6 +3,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
+<<<<<<< HEAD
  * Created by johan on 2017-02-18.
  */
 public class Gigasecond {
