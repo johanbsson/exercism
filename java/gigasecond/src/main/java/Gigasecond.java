@@ -1,7 +1,5 @@
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
+import java.time.*;
+import java.time.temporal.TemporalAccessor;
 
 /**
  * Created by johan on 2017-02-18.
@@ -9,16 +7,15 @@ import java.time.ZoneOffset;
 public class Gigasecond {
     long epochBirthTime;
     public Gigasecond(LocalDate date) {
-        this.epochBirthTime  = Instant.from(date).getEpochSecond();
+        this.epochBirthTime = date.atStartOfDay(ZoneOffset.UTC).toInstant().getEpochSecond();
     }
 
     public Gigasecond(LocalDateTime dateTime) {
-        this.epochBirthTime  = Instant.from(dateTime).getEpochSecond();
+        this.epochBirthTime  = dateTime.toInstant(ZoneOffset.UTC).getEpochSecond();
     }
 
     public LocalDateTime getDate() {
         Instant i = Instant.ofEpochSecond(epochBirthTime + 1000000000);
-
         return LocalDateTime.ofInstant(i, ZoneOffset.UTC);
     }
 }
