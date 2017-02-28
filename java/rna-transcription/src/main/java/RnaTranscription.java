@@ -4,11 +4,17 @@
 public class RnaTranscription {
     public static String ofDna(String s) {
         String rna = "";
+        char[] charArray = s.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for(char c: charArray){
+            sb.append(convert(c));
 
-        return rna;
+        }
+
+        return sb.toString();
     }
-    Character convert (Character c){
-        Character out = null;
+    private static char convert(char c){
+        char out;
 
         switch (c){
 
