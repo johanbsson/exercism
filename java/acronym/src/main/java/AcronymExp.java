@@ -3,28 +3,31 @@
  */
 public class AcronymExp {
     public static void main(String[] args) {
-        String indata = "en apa är en apa ,.:;";
+        String indata = "apa bapa.cepa-depa";
 
         char[] arr = indata.toCharArray();
+        StringBuffer sb = new StringBuffer();
 
 
         for(char c: arr){
-            System.out.println("-----------------------");
-            System.out.println("Tecken:" +c + ":");
-
             if(Character.isAlphabetic(c)){
                 System.out.println("is alpabetic");
+                sb.append(c);
+
             }
-            if(Character.isSpaceChar(c)){
-                System.out.println("is spaceChar");
-            }
-            if(Character.isUpperCase(c)){
-                System.out.println("is upper");
-            }
-            if(Character.isLowerCase(c)){
-                System.out.println("is lower");
+            else{
+                sb.append(";");
             }
 
         }
+
+        String[] split = sb.toString().split(";");
+
+        StringBuffer sb2 = new StringBuffer();
+        for(String s:split){
+            System.out.println(s);
+            sb2.append(s.charAt(0));
+        }
+        System.out.println(":"+sb2.toString().toUpperCase()+":");
     }
 }
