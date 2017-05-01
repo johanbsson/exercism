@@ -22,6 +22,7 @@ public class AcronymTest {
 
     @Test
     public void fromInconsistentlyCasedPhrases() {
+        //TODO fix this testcase!!!!
         final String phrase = "HyperText Markup Language";
         final String expected = "HTML";
         assertEquals(expected, Acronym.generate(phrase));
